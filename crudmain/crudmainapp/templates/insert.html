@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+<body class="bg-dark text-light">
+    <div class="container">
+        <div class="background">
+            <div class="shape"></div>
+            <div class="shape"></div>
+        </div>
+        <center>
+            <form action="{% url 'insertdata' %}" method="POST">
+                {% csrf_token %}
+                <h1>Insert Form</h1><hr>
+                <div class="mb-3">
+                    <label for="fname" class="form-label">First Name</label>
+                    <input type="text" name="fname" value="" class="form-control" id="fname">
+                </div>
+                <div class="mb-3">
+                    <label for="lname" class="form-label">Last Name</label>
+                    <input type="text" name="lname" value="" class="form-control" id="lname">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="text" name="email" value="" class="form-control" id="email">
+                </div>
+                <div class="mb-3">
+                    <label for="contact" class="form-label">Contact</label>
+                    <input type="text" name="contact" value="" class="form-control" id="contact">
+                </div>
+                <button type="submit" class="btn btn-primary">Save</button>
+                <center> <a href="{% url 'logout' %}" class="btn btn-primary">logout</a> </center>
+            </form>
+            <hr>
+        </center>
+    </div>
+
+    <!-- Optional Bootstrap JS (for interactive features) -->
+</body>
+</html>
+{% endblock content %}
